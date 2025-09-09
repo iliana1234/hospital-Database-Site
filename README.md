@@ -1,6 +1,6 @@
 # hospital-Database-Site
 
-A hospital database management site to manage doctors and their patients, with functionality for filtering and retrieving records.
+A hospital database site to manage doctors and their patients, with functionality for filtering and retrieving records.
 
 ## Features
 - Add and manage doctor profiles
