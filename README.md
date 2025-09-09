@@ -12,4 +12,4 @@ A hospital database site to manage doctors and their patients, with functionalit
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/iliana1234/hospital-Database-Site.git
+   git clone https://github.com/iliana1234/hospital-database-site.git
