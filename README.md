@@ -1,4 +1,4 @@
-# hospital-Database-Site
+# hospital-database-site
 
 A hospital database site to manage doctors and their patients, with functionality for filtering and retrieving records.
 
