@@ -1,0 +1,73 @@
+﻿@model HospitalDataBase.Models.Doctors
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Doctor - @Model.FirstName @Model.LastName</h4>
+    <hr />
+
+    <!-- Display the picture if it exists -->
+    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    {
+        <div class="form-group">
+            <label>Doctor's Picture</label><br />
+            <img src="@Model.ImagePath" alt="Doctor Picture" class="img-thumbnail" width="150" />
+        </div>
+    }
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AboutInfo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AboutInfo)
+        </dd>
+    </dl>
+</div>
+
+<h3>Patients Under @Model.FirstName @Model.LastName</h3>
+@if (Model.Patients != null && Model.Patients.Any())
+{
+    <ul>
+        @foreach (var patient in Model.Patients)
+        {
+            <li>
+                <a href="@Url.Action("Details", "Patients", new { id = patient.Id })">
+                    <strong>@patient.FirstName @patient.LastName</strong>
+                </a>
+                <div>Diagnosis: @patient.Diagnosis</div>
+                <div>Prescribed Medicine: @patient.Meds</div>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No patients assigned to this doctor yet.</p>
+}
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

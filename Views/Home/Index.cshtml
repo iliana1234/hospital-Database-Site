@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewData["BodyClass"] = "home-page"; 
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HospitalDataBase</title>
+    <!-- The link to the file -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="@ViewData["BodyClass"]">
+    <div class="text-center">
+        <h1 class="display-4">Hospital database</h1>
+        <p>Please login to be able to view the information about the doctors and the patients</p>
+    </div>
+</body>
+</html>
